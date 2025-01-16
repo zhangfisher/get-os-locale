@@ -1,5 +1,5 @@
-import lcid from 'lcid';
-import {exec, execSync} from './exec.js';
+const lcid = require('lcid');
+const {exec, execSync} = require('./exec.js')
 
 const defaultOptions = {spawn: true};
 const defaultLocale = 'en-US';
@@ -86,7 +86,7 @@ function normalise(input) {
 
 const cache = new Map();
 
-export async function osLocale(options = defaultOptions) {
+async function osLocale(options = defaultOptions) {
 	if (cache.has(options.spawn)) {
 		return cache.get(options.spawn);
 	}
@@ -112,7 +112,7 @@ export async function osLocale(options = defaultOptions) {
 	return normalised;
 }
 
-export function osLocaleSync(options = defaultOptions) {
+function osLocaleSync(options = defaultOptions) {
 	if (cache.has(options.spawn)) {
 		return cache.get(options.spawn);
 	}
@@ -135,4 +135,11 @@ export function osLocaleSync(options = defaultOptions) {
 	const normalised = normalise(locale || defaultLocale);
 	cache.set(options.spawn, normalised);
 	return normalised;
+}
+
+
+
+module.exports = {
+	osLocale,
+	osLocaleSync
 }

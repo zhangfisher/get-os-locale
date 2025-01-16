@@ -1,4 +1,4 @@
-import {osLocaleSync} from './index.js';
+import {osLocaleSync} from '../src/index.js';
 
 // TODO: Enable when ESLint supports top-level await.
 // console.log(await osLocale());
