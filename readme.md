@@ -1,4 +1,8 @@
-# os-locale
+# get-os-locale
+
+- fork from https://github.com/sindresorhus/os-locale
+- add support commonjs and es6 module
+
 
 > Get the system [locale](https://en.wikipedia.org/wiki/Locale_(computer_software))
 
